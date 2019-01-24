@@ -19,18 +19,21 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //手机振动
         findViewById(R.id.tv_btn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 TipHelper.Vibrate(MainActivity.this, new long[]{800, 1000, 800, 1000, 800, 1000, 800, 1000, 800, 1000}, false);
             }
         });
+        //推送
         findViewById(R.id.btn_tuisong).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showNotifictionIcon(MainActivity.this);
             }
         });
+
     }
     public static void showNotifictionIcon(Context context) {
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context);
